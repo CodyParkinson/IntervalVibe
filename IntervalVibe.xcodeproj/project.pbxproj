@@ -1,0 +1,423 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11795F562A225B7C0019EEFB /* IntervalVibeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11795F552A225B7C0019EEFB /* IntervalVibeApp.swift */; };
+		11795F582A225B7C0019EEFB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11795F572A225B7C0019EEFB /* ContentView.swift */; };
+		11795F5A2A225B7D0019EEFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11795F592A225B7D0019EEFB /* Assets.xcassets */; };
+		11795F5D2A225B7D0019EEFB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11795F5C2A225B7D0019EEFB /* Preview Assets.xcassets */; };
+		11795F642A225C1E0019EEFB /* intervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11795F632A225C1E0019EEFB /* intervalTimer.swift */; };
+		11795F662A225C700019EEFB /* aboutHowTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11795F652A225C700019EEFB /* aboutHowTo.swift */; };
+		11795F682A225CA20019EEFB /* timerCountdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11795F672A225CA20019EEFB /* timerCountdown.swift */; };
+		11795F6A2A225CDF0019EEFB /* intervalTimerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11795F692A225CDF0019EEFB /* intervalTimerListView.swift */; };
+		11795F6C2A225D040019EEFB /* timerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11795F6B2A225D040019EEFB /* timerSettings.swift */; };
+		11795F6E2A225D210019EEFB /* timerBuilderPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11795F6D2A225D210019EEFB /* timerBuilderPage.swift */; };
+		11795F702A225D4A0019EEFB /* TimerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11795F6F2A225D4A0019EEFB /* TimerData.swift */; };
+		11795F762A225D6D0019EEFB /* BEEP3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11795F722A225D6D0019EEFB /* BEEP3.mp3 */; };
+		11795F772A225D6D0019EEFB /* BEEP2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11795F732A225D6D0019EEFB /* BEEP2.mp3 */; };
+		11795F782A225D6D0019EEFB /* BEEP1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11795F742A225D6D0019EEFB /* BEEP1.mp3 */; };
+		11795F792A225D6D0019EEFB /* BEEP4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11795F752A225D6D0019EEFB /* BEEP4.mp3 */; };
+		11795F7C2A225DE60019EEFB /* SPConfetti in Frameworks */ = {isa = PBXBuildFile; productRef = 11795F7B2A225DE60019EEFB /* SPConfetti */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		11795F522A225B7C0019EEFB /* IntervalVibe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntervalVibe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11795F552A225B7C0019EEFB /* IntervalVibeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalVibeApp.swift; sourceTree = "<group>"; };
+		11795F572A225B7C0019EEFB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		11795F592A225B7D0019EEFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11795F5C2A225B7D0019EEFB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		11795F632A225C1E0019EEFB /* intervalTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = intervalTimer.swift; sourceTree = "<group>"; };
+		11795F652A225C700019EEFB /* aboutHowTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aboutHowTo.swift; sourceTree = "<group>"; };
+		11795F672A225CA20019EEFB /* timerCountdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timerCountdown.swift; sourceTree = "<group>"; };
+		11795F692A225CDF0019EEFB /* intervalTimerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = intervalTimerListView.swift; sourceTree = "<group>"; };
+		11795F6B2A225D040019EEFB /* timerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timerSettings.swift; sourceTree = "<group>"; };
+		11795F6D2A225D210019EEFB /* timerBuilderPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timerBuilderPage.swift; sourceTree = "<group>"; };
+		11795F6F2A225D4A0019EEFB /* TimerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerData.swift; sourceTree = "<group>"; };
+		11795F722A225D6D0019EEFB /* BEEP3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BEEP3.mp3; sourceTree = "<group>"; };
+		11795F732A225D6D0019EEFB /* BEEP2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BEEP2.mp3; sourceTree = "<group>"; };
+		11795F742A225D6D0019EEFB /* BEEP1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BEEP1.mp3; sourceTree = "<group>"; };
+		11795F752A225D6D0019EEFB /* BEEP4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BEEP4.mp3; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		11795F4F2A225B7C0019EEFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11795F7C2A225DE60019EEFB /* SPConfetti in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11795F492A225B7C0019EEFB = {
+			isa = PBXGroup;
+			children = (
+				11795F542A225B7C0019EEFB /* IntervalVibe */,
+				11795F532A225B7C0019EEFB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		11795F532A225B7C0019EEFB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11795F522A225B7C0019EEFB /* IntervalVibe.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		11795F542A225B7C0019EEFB /* IntervalVibe */ = {
+			isa = PBXGroup;
+			children = (
+				11795F552A225B7C0019EEFB /* IntervalVibeApp.swift */,
+				11795F572A225B7C0019EEFB /* ContentView.swift */,
+				11795F632A225C1E0019EEFB /* intervalTimer.swift */,
+				11795F652A225C700019EEFB /* aboutHowTo.swift */,
+				11795F672A225CA20019EEFB /* timerCountdown.swift */,
+				11795F692A225CDF0019EEFB /* intervalTimerListView.swift */,
+				11795F6B2A225D040019EEFB /* timerSettings.swift */,
+				11795F6D2A225D210019EEFB /* timerBuilderPage.swift */,
+				11795F6F2A225D4A0019EEFB /* TimerData.swift */,
+				11795F712A225D6D0019EEFB /* Sounds */,
+				11795F592A225B7D0019EEFB /* Assets.xcassets */,
+				11795F5B2A225B7D0019EEFB /* Preview Content */,
+			);
+			path = IntervalVibe;
+			sourceTree = "<group>";
+		};
+		11795F5B2A225B7D0019EEFB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				11795F5C2A225B7D0019EEFB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		11795F712A225D6D0019EEFB /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				11795F722A225D6D0019EEFB /* BEEP3.mp3 */,
+				11795F732A225D6D0019EEFB /* BEEP2.mp3 */,
+				11795F742A225D6D0019EEFB /* BEEP1.mp3 */,
+				11795F752A225D6D0019EEFB /* BEEP4.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		11795F512A225B7C0019EEFB /* IntervalVibe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11795F602A225B7D0019EEFB /* Build configuration list for PBXNativeTarget "IntervalVibe" */;
+			buildPhases = (
+				11795F4E2A225B7C0019EEFB /* Sources */,
+				11795F4F2A225B7C0019EEFB /* Frameworks */,
+				11795F502A225B7C0019EEFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IntervalVibe;
+			packageProductDependencies = (
+				11795F7B2A225DE60019EEFB /* SPConfetti */,
+			);
+			productName = IntervalVibe;
+			productReference = 11795F522A225B7C0019EEFB /* IntervalVibe.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		11795F4A2A225B7C0019EEFB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					11795F512A225B7C0019EEFB = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = 11795F4D2A225B7C0019EEFB /* Build configuration list for PBXProject "IntervalVibe" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 11795F492A225B7C0019EEFB;
+			packageReferences = (
+				11795F7A2A225DE60019EEFB /* XCRemoteSwiftPackageReference "SPConfetti" */,
+			);
+			productRefGroup = 11795F532A225B7C0019EEFB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				11795F512A225B7C0019EEFB /* IntervalVibe */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		11795F502A225B7C0019EEFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11795F5D2A225B7D0019EEFB /* Preview Assets.xcassets in Resources */,
+				11795F772A225D6D0019EEFB /* BEEP2.mp3 in Resources */,
+				11795F5A2A225B7D0019EEFB /* Assets.xcassets in Resources */,
+				11795F762A225D6D0019EEFB /* BEEP3.mp3 in Resources */,
+				11795F782A225D6D0019EEFB /* BEEP1.mp3 in Resources */,
+				11795F792A225D6D0019EEFB /* BEEP4.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11795F4E2A225B7C0019EEFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11795F642A225C1E0019EEFB /* intervalTimer.swift in Sources */,
+				11795F682A225CA20019EEFB /* timerCountdown.swift in Sources */,
+				11795F582A225B7C0019EEFB /* ContentView.swift in Sources */,
+				11795F562A225B7C0019EEFB /* IntervalVibeApp.swift in Sources */,
+				11795F662A225C700019EEFB /* aboutHowTo.swift in Sources */,
+				11795F6C2A225D040019EEFB /* timerSettings.swift in Sources */,
+				11795F6E2A225D210019EEFB /* timerBuilderPage.swift in Sources */,
+				11795F6A2A225CDF0019EEFB /* intervalTimerListView.swift in Sources */,
+				11795F702A225D4A0019EEFB /* TimerData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		11795F5E2A225B7D0019EEFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		11795F5F2A225B7D0019EEFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		11795F612A225B7D0019EEFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"IntervalVibe/Preview Content\"";
+				DEVELOPMENT_TEAM = ZVL9XJA78T;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codyparkinson.IntervalVibe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		11795F622A225B7D0019EEFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"IntervalVibe/Preview Content\"";
+				DEVELOPMENT_TEAM = ZVL9XJA78T;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codyparkinson.IntervalVibe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11795F4D2A225B7C0019EEFB /* Build configuration list for PBXProject "IntervalVibe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11795F5E2A225B7D0019EEFB /* Debug */,
+				11795F5F2A225B7D0019EEFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11795F602A225B7D0019EEFB /* Build configuration list for PBXNativeTarget "IntervalVibe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11795F612A225B7D0019EEFB /* Debug */,
+				11795F622A225B7D0019EEFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		11795F7A2A225DE60019EEFB /* XCRemoteSwiftPackageReference "SPConfetti" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ivanvorobei/SPConfetti";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		11795F7B2A225DE60019EEFB /* SPConfetti */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11795F7A2A225DE60019EEFB /* XCRemoteSwiftPackageReference "SPConfetti" */;
+			productName = SPConfetti;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 11795F4A2A225B7C0019EEFB /* Project object */;
+}
