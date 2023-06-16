@@ -23,7 +23,7 @@ struct HowToView: View {
                             .font(.headline)
                             .fontWeight(.bold))
                         {
-                            Text("A simple way to create an interval timer. Simply select the length of the interval and how long to rest between each one. Then, select the desired amount of sets. That’s all it takes! Start your session, and you’ll be notified once you’ve completed all of your sets.")
+                            Text("A simple way to create an interval timer. Simply select the length of the interval and how long to rest between each one. Then, select the desired amount of sets. That’s all it takes! Start your session, and you’ll be notified once you’ve completed all of your sets.\n\n")
                                 .multilineTextAlignment(.leading)
                         }
                         .padding([.leading, .bottom])
@@ -32,7 +32,7 @@ struct HowToView: View {
                             .font(.headline)
                             .fontWeight(.bold))
                         {
-                            Text("View all of your created interval timers. After selecting a page, a drop down will appear to allow you to review the timer. This page can be rearranged by selecting the “Edit” button or by holding down the tab and dragging to a new location.\n\nIf you no longer need a timer, delete by swiping to the left or select the “Edit” button.\n\nTo begin a selected timer, simply press “Start Timer” below the summary.")
+                            Text("View all of your created interval timers. After selecting a page, a drop down will appear to allow you to review the timer. This page can be rearranged by selecting the “Edit” button or by holding down the tab and dragging to a new location.\n\nIf you no longer need a timer, delete by swiping to the left or select the “Edit” button.\n\nTo begin a selected timer, simply press “Start Timer” below the summary.\n\nOnce you select “Start Timer”, you will be taken to the countdown page and the time will begin to count down. Tap anywhere on the screen to pause the timer. If you wish to cancel the timer, tap anywhere on the screen and select “End Session”.\n\n")
                                 .multilineTextAlignment(.leading)
                         }
                         .padding([.leading, .bottom, .trailing])
@@ -44,7 +44,7 @@ struct HowToView: View {
                             .font(.headline)
                             .fontWeight(.bold))
                         {
-                            Text("A simple way to create your own custom intervals. First, create a name to be used to identify your timer easily in the “Select / Start Intervals page”. Next, select the desired number of sets.\n\nNear the bottom of the page, there is a section to enter the name of the activity. This name will be displayed during the countdown.\n\nTap on the numbers to select the desired minutes and seconds. Use the color slider to adjust what background you would like displayed during this countdown.\n\nOnce all of this is entered, simply press the “+” and the activity will be added. You know the activity has been added successfully as it will be displayed above.\n\nOnce all of your activities have been added, press “Save Timer”. If you do not click “Save Timer”, you will not be able to see it in the “Select / Start Intervals” page.")
+                            Text("A simple way to create your own custom intervals. First, create a name to be used to identify your timer easily in the “Select / Start Intervals page”. Next, select the desired number of sets.\n\nPress the “Add New Activity” button to add countdowns to your interval timer. Simply give your activity a name and select how long you want the activity to be. Use the color slider to select the background color of the activity when playing. Press “Done” and your activity will be saved!\n\nYour activities will be displayed in a list under the “Add New Activity” button. These can be deleted by swiping to the left or rearranged by holding down and dragging them to a new location.\n\nOnce all of your activities have been added, press “Save Timer”. If you do not click “Save Timer”, you will not be able to see it in the “Select / Start Intervals” page.\n\nIf you wish to have a clean page to start a new timer, press the “Clear Page” button at the top left of the screen. Warning: if you have not saved the timer, you will not be able to recover the page. \n\nFinally, you can edit any previously existing timers by pressing the “Load Timer” button.\n\n")
                                 .multilineTextAlignment(.leading)
                             
                             Text("And, that's it!")

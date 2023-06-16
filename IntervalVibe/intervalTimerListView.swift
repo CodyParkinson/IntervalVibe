@@ -11,10 +11,13 @@
 //  Created by Cody Parkinson on 5/17/23.
 //
 
+// Updated 061623
+
 import SwiftUI
 import SPConfetti
 import AVFoundation
 import UIKit
+
 
 struct IntervalTimerListView: View {
     @EnvironmentObject var dataStore: DataStore
@@ -87,10 +90,10 @@ struct IntervalTimerDetailView: View {
 
     // Audio Player
     @State private var beepPlayer: AVAudioPlayer!
-    
+
     // Display the confetti!
     @State private var confettiOn = false
-    
+
     let intTimCall: IntTimCall
     @State private var currentSet: Int = 0
     @State private var currentTimerIndex: Int = 0
@@ -98,67 +101,67 @@ struct IntervalTimerDetailView: View {
     @State private var currentSeconds: Int = 0
     @State private var isTimerRunning: Bool = false
     @State private var timer: Timer?
-    
+
     // Calculate the next value
     var nextTimer: String {
-            let nextIndex = currentTimerIndex + 1
-            if nextIndex < intTimCall.timerItems.count {
-                return intTimCall.timerItems[nextIndex].name
-            } else if currentSet == intTimCall.numOfSets {
-                return "Last One!"
-            } else if nextIndex == intTimCall.timerItems.count && currentSet != intTimCall.numOfSets - 1 {
-                return intTimCall.timerItems[0].name
-            } else {
-                return "Last One!"
-            }
+        let nextIndex = currentTimerIndex + 1
+        if nextIndex < intTimCall.timerItems.count {
+            return intTimCall.timerItems[nextIndex].name
+        } else if currentSet == intTimCall.numOfSets {
+            return "Last One!"
+        } else if nextIndex == intTimCall.timerItems.count && currentSet != intTimCall.numOfSets - 1 {
+            return intTimCall.timerItems[0].name
+        } else {
+            return "Last One!"
         }
-    
+    }
+
     // Calculate the next color
     var nextColor: Double {
-            let nextColor = currentTimerIndex + 1
-            if nextColor < intTimCall.timerItems.count {
-                return intTimCall.timerItems[nextColor].hue
-            } else if currentSet == intTimCall.numOfSets {
-                return 0.3
-            } else if nextColor == intTimCall.timerItems.count && currentSet != intTimCall.numOfSets - 1 {
-                return intTimCall.timerItems[0].hue
-            } else {
-                return 0.3
-            }
+        let nextColor = currentTimerIndex + 1
+        if nextColor < intTimCall.timerItems.count {
+            return intTimCall.timerItems[nextColor].hue
+        } else if currentSet == intTimCall.numOfSets {
+            return 0.3
+        } else if nextColor == intTimCall.timerItems.count && currentSet != intTimCall.numOfSets - 1 {
+            return intTimCall.timerItems[0].hue
+        } else {
+            return 0.3
         }
-    
+    }
+
+    @State private var showPauseResumeButtons = false
 
     var body: some View {
         NavigationView {
             VStack {
                 VStack {
-                    
                     Spacer()
-                    
+
                     Text(intTimCall.timerItems[currentTimerIndex].name)
                         .foregroundColor(.white)
                         .font(.largeTitle)
                         .multilineTextAlignment(.center)
-            
+
                     Spacer()
-                    
-                    
+
                     Text(formattedTime(minutes: currentMinutes, seconds: currentSeconds))
                         .foregroundColor(.white)
                         .font(.system(size: getSizeForFont()))
                         .font(Font.system(.title, design: .monospaced))
+                        .onTapGesture {
+                            showPauseResumeButtons = true
+                            stopTimer()
+                        }
 
-                        
-                    
                     Spacer()
-                        
-                    
+
                     Text("Sets Remaining: \(intTimCall.numOfSets - currentSet)")
                         .foregroundColor(.white)
                         .font(.largeTitle)
-                    
+
                     Spacer()
-                    
+
                     Text("Next: \(nextTimer)")
                         .foregroundColor(.white)
                         .font(.title)
@@ -166,54 +169,46 @@ struct IntervalTimerDetailView: View {
                         .padding([.leading, .trailing])
                         .background(Color(hue: nextColor, saturation: 0.8, brightness: 0.83))
                         .cornerRadius(10)
-                        
 
-                    
                     Spacer()
-                    
-                    Button(action: {
-                        presentationMode.wrappedValue.dismiss()
-                        confettiOn = false
-                        SPConfetti.stopAnimating()
-                    }) {
-                        Text("End Session")
-                            .foregroundColor(.white)
-                            .font(.headline)
-                    }
-                        
+
                 }
                 .onAppear {
                     // Disable idle timer
                     UIApplication.shared.isIdleTimerDisabled = true
-                    
+
                     resetTimer()
                     startTimer()
                 }
                 .onDisappear {
                     // Enable idle timer
                     UIApplication.shared.isIdleTimerDisabled = false
-                    
+
                     stopTimer()
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color(hue: intTimCall.timerItems[currentTimerIndex].hue, saturation: 0.8, brightness: 0.83))
-    
+            .onTapGesture {
+                showPauseResumeButtons = true
+                stopTimer()
+            }
+            .disabled(showPauseResumeButtons)
         }
         .navigationBarBackButtonHidden(true)
         .overlay(
-            Group{
+            Group {
                 if confettiOn {
                     Button("Great Job!") {
                         presentationMode.wrappedValue.dismiss()
                         confettiOn = false
                         SPConfetti.stopAnimating()
                     }
-                        .multilineTextAlignment(.center)
-                        .background(.white)
-                        .font(.system(size: 120))
-                        .cornerRadius(15)
-                        .foregroundColor(.black)
+                    .multilineTextAlignment(.center)
+                    .background(.white)
+                    .font(.system(size: 120))
+                    .cornerRadius(15)
+                    .foregroundColor(.black)
                 }
             }
         )
@@ -221,15 +216,59 @@ struct IntervalTimerDetailView: View {
                   animation: .fullWidthToDown,
                   particles: [.triangle, .arc],
                   duration: 1000.0)
-    }
+        .overlay(
+            Group {
+                if showPauseResumeButtons {
+                    Color.black.opacity(0.7)
+                        .ignoresSafeArea()
+                        .onTapGesture {
+                            showPauseResumeButtons = false
+                            startTimer()
+                        }
 
+                    VStack {
+                        Spacer()
+
+                        Button(action: {
+                            showPauseResumeButtons = false
+                            startTimer()
+                        }) {
+                            Text("Resume")
+                                .foregroundColor(.white)
+                                .font(.largeTitle)
+                                .padding()
+                                .background(.black)
+                                .cornerRadius(15)
+                        }
+
+                        Spacer().frame(height: 20)
+
+                        Button(action: {
+                            presentationMode.wrappedValue.dismiss()
+                            confettiOn = false
+                            SPConfetti.stopAnimating()
+                        }) {
+                            Text("End Session")
+                                .foregroundColor(.white)
+                                .font(.largeTitle)
+                                .padding()
+                                .background(.black)
+                                .cornerRadius(15)
+                        }
+
+                        Spacer()
+                    }
+                    .padding()
+                }
+            }
+        )
+    }
 
     private func startTimer() {
         guard !isTimerRunning else { return }
 
         isTimerRunning = true
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-            
             if self.currentSeconds > 0 {
                 self.currentSeconds -= 1
             } else if self.currentMinutes > 0 {
@@ -253,15 +292,13 @@ struct IntervalTimerDetailView: View {
                     }
                 }
             }
-            
+
             if self.currentMinutes == 0 && self.currentSeconds <= 3 {
                 self.playBeepSound(for: self.currentSeconds)
             }
         }
     }
 
-    
-    
     private func playBeepSound(for seconds: Int) {
         var soundName = ""
         switch seconds {
@@ -289,8 +326,6 @@ struct IntervalTimerDetailView: View {
             print("Failed to play the \(soundName) sound: \(error)")
         }
     }
-    
-    
 
     private func stopTimer() {
         timer?.invalidate()
@@ -306,7 +341,7 @@ struct IntervalTimerDetailView: View {
     private func formattedTime(minutes: Int, seconds: Int) -> String {
         return String(format: "%02d:%02d", minutes, seconds)
     }
-    
+
     private func getSizeForFont() -> CGFloat {
         if UIDevice.current.orientation.isLandscape {
             return 180
@@ -314,8 +349,8 @@ struct IntervalTimerDetailView: View {
             return 130
         }
     }
-    
 }
+
 
 
 
