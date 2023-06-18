@@ -42,6 +42,7 @@
 		11795F732A225D6D0019EEFB /* BEEP2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BEEP2.mp3; sourceTree = "<group>"; };
 		11795F742A225D6D0019EEFB /* BEEP1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BEEP1.mp3; sourceTree = "<group>"; };
 		11795F752A225D6D0019EEFB /* BEEP4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BEEP4.mp3; sourceTree = "<group>"; };
+		11911A252A3CE31200397A9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +76,7 @@
 		11795F542A225B7C0019EEFB /* IntervalVibe */ = {
 			isa = PBXGroup;
 			children = (
+				11911A252A3CE31200397A9F /* Info.plist */,
 				11795F552A225B7C0019EEFB /* IntervalVibeApp.swift */,
 				11795F572A225B7C0019EEFB /* ContentView.swift */,
 				11795F632A225C1E0019EEFB /* intervalTimer.swift */,
@@ -330,6 +332,7 @@
 				DEVELOPMENT_TEAM = ZVL9XJA78T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = IntervalVibe/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -362,6 +365,7 @@
 				DEVELOPMENT_TEAM = ZVL9XJA78T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = IntervalVibe/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -264,10 +264,20 @@ struct IntervalTimerDetailView: View {
         )
     }
 
+    
     private func startTimer() {
         guard !isTimerRunning else { return }
 
         isTimerRunning = true
+        
+        // Enable background execution
+        var backgroundTask: UIBackgroundTaskIdentifier = .invalid
+        
+        backgroundTask = UIApplication.shared.beginBackgroundTask {
+            // End the background task
+            UIApplication.shared.endBackgroundTask(backgroundTask)
+        }
+        
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             if self.currentSeconds > 0 {
                 self.currentSeconds -= 1
@@ -289,6 +299,9 @@ struct IntervalTimerDetailView: View {
                         self.confettiOn = true
                         timer.invalidate()
                         self.isTimerRunning = false
+                        
+                        // End the background task when the timer reaches 0 on the last set
+                        UIApplication.shared.endBackgroundTask(backgroundTask)
                     }
                 }
             }
@@ -297,6 +310,9 @@ struct IntervalTimerDetailView: View {
                 self.playBeepSound(for: self.currentSeconds)
             }
         }
+        
+        // Add the timer to the main run loop in the common mode
+        RunLoop.main.add(timer!, forMode: .common)
     }
 
     private func playBeepSound(for seconds: Int) {
@@ -320,12 +336,18 @@ struct IntervalTimerDetailView: View {
         }
 
         do {
+            // Set the audio session category to allow background audio playback
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: .mixWithOthers)
+            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+
             self.beepPlayer = try AVAudioPlayer(contentsOf: beepURL)
             beepPlayer?.play()
         } catch {
             print("Failed to play the \(soundName) sound: \(error)")
         }
     }
+
+    
 
     private func stopTimer() {
         timer?.invalidate()
@@ -349,6 +371,7 @@ struct IntervalTimerDetailView: View {
             return 130
         }
     }
+    
 }
 
 
