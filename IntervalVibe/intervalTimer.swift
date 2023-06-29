@@ -14,47 +14,42 @@
 import SwiftUI
 
 struct intervalTimer: View {
-    
-    @EnvironmentObject private var TimerSettings: TimerSettings
-    
+    @EnvironmentObject private var timerSettings: TimerSettings
+
     var body: some View {
         NavigationView {
             Form {
-                Section {
-                    Picker("Minutes", selection: $TimerSettings.intervalLengthMinutes) {
+                Section(header: Text("Length of Intervals")) {
+                    Picker("Minutes", selection: $timerSettings.intervalLengthMinutes) {
                         ForEach(0..<61) {
                             Text("\($0)")
                         }
                     }
-                    Picker("Seconds", selection: $TimerSettings.intervalLengthSeconds) {
+                    Picker("Seconds", selection: $timerSettings.intervalLengthSeconds) {
                         ForEach(0..<60) {
                             Text("\($0)")
                         }
                     }
-                } header: {
-                    Text("Length of Intervals")
                 }
                 
-                Section {
-                    Picker("Minutes", selection: $TimerSettings.restLengthMinutes) {
+                Section(header: Text("Time Between Intervals")) {
+                    Picker("Minutes", selection: $timerSettings.restLengthMinutes) {
                         ForEach(0..<60) {
                             Text("\($0)")
                         }
                     }
-                    Picker("Seconds", selection: $TimerSettings.restLengthSeconds) {
+                    Picker("Seconds", selection: $timerSettings.restLengthSeconds) {
                         ForEach(0..<60) {
                             Text("\($0)")
                         }
                     }
-                } header: {
-                    Text("Time Between Intervals")
                 }
                 
                 Section {
                     HStack {
                         Text("Number of Sets")
-                        Stepper(value: $TimerSettings.numberOfSets, in: 1...100) {
-                            Text("\(TimerSettings.numberOfSets)")
+                        Stepper(value: $timerSettings.numberOfSets, in: 1...100) {
+                            Text("\(timerSettings.numberOfSets)")
                                 .frame(maxWidth: .infinity, alignment: .trailing)
                         }
                     }
@@ -62,20 +57,26 @@ struct intervalTimer: View {
                 
                 Section {
                     Button("Start Session") {
-                        TimerSettings.timerMinutesEdit = TimerSettings.intervalLengthMinutes
-                        TimerSettings.timerSecondsEdit = TimerSettings.intervalLengthSeconds
-                        TimerSettings.numOfIntervalsEdit = TimerSettings.numberOfSets
-                        TimerSettings.isPresentingFullScreenCover = true
+                        timerSettings.timerMinutesEdit = timerSettings.intervalLengthMinutes
+                        timerSettings.timerSecondsEdit = timerSettings.intervalLengthSeconds
+                        timerSettings.numOfIntervalsEdit = timerSettings.numberOfSets
+                        timerSettings.isPresentingFullScreenCover = true
                     }
-                    .fullScreenCover(isPresented: $TimerSettings.isPresentingFullScreenCover) {
+                    .fullScreenCover(isPresented: $timerSettings.isPresentingFullScreenCover) {
                         timerCountdown()
                     }
                 }
             }
         }
         .navigationTitle("Quick Interval Setup")
+        .navigationViewStyle(StackNavigationViewStyle()) // Set the navigation view style to StackNavigationViewStyle
+        .onAppear {
+            // Lock orientation to portrait
+            UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+        }
     }
 }
+
 
 struct intervalTimer_Previews: PreviewProvider {
     static var previews: some View {
